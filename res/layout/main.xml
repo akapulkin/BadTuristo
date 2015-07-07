@@ -20,7 +20,8 @@
             android:linksClickable="false" android:background="#ff343925" android:padding="5dp"
             android:paddingBottom="10dp" android:hint="Введите текст!" android:layout_alignParentTop="true"
             android:layout_alignParentStart="true" android:layout_toStartOf="@+id/textView"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignEnd="@+id/switch_light" android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,14 +29,16 @@
             android:id="@+id/textView"
             android:maxLines="3" android:minLines="3"
             android:background="#ff343925" android:padding="5dp" android:paddingTop="10dp" android:textSize="25dp"
-            android:textStyle="bold" android:layout_below="@+id/uperText" android:layout_alignEnd="@+id/lightButton"
-            android:layout_alignParentStart="true" android:textIsSelectable="true"/>
+            android:textStyle="bold" android:layout_below="@+id/uperText"
+            android:layout_alignParentStart="true" android:textIsSelectable="true"
+            android:layout_alignEnd="@+id/switch_light" android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/noizButton"
             android:src="@drawable/ic_action_volume_up"
-            android:layout_above="@+id/switch_light" android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true" android:layout_alignParentStart="true"
             android:layout_toStartOf="@+id/switch_light"/>
     <ImageButton
             android:layout_width="wrap_content"
@@ -44,7 +47,7 @@
             android:src="@android:drawable/ic_menu_sort_alphabetically"
             android:adjustViewBounds="true"
             android:baseline="@android:dimen/app_icon_size"
-            android:layout_below="@+id/textView" android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true" android:layout_alignParentEnd="true"
             android:layout_toEndOf="@+id/noizButton"/>
     <Switch
             android:layout_width="wrap_content"
@@ -52,6 +55,11 @@
             android:text="Вспышка"
             android:id="@+id/switch_light"
             android:checked="false"
-            android:layout_below="@+id/lightButton" android:layout_alignParentEnd="true"/>
+            android:layout_above="@+id/lightButton" android:layout_alignParentEnd="true"/>
+        <Space
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/textView" android:layout_alignStart="@+id/textView"
+                android:layout_alignEnd="@+id/textView"/>
 </RelativeLayout>
 

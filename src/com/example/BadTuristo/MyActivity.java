@@ -37,7 +37,7 @@ public class MyActivity extends Activity {
         mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
         mAssetManager = getAssets();
 
-        // получим идентификаторы
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         mDotSound = loadSound("e.wav");
         mDashSound = loadSound("t.wav");
         mSwitch = (Switch) findViewById(R.id.switch_light);
@@ -52,6 +52,7 @@ public class MyActivity extends Activity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (camera == null) {
                     camera = Camera.open();
+
                 }
                 Camera.Parameters parameters = camera.getParameters();
                 if (!isChecked) {
@@ -96,6 +97,7 @@ public class MyActivity extends Activity {
                                 e.printStackTrace();
                             }
                         }
+                        buttonView.setChecked(false);
                     }
                 }
 
@@ -186,7 +188,7 @@ public class MyActivity extends Activity {
             afd = mAssetManager.openFd(fileName);
         } catch (IOException e) {
             e.printStackTrace();
-            Toast.makeText(this, "Не могу загрузить файл " + fileName,
+            Toast.makeText(this, "пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ " + fileName,
                     Toast.LENGTH_SHORT).show();
             return -1;
         }
