@@ -55,53 +55,60 @@ public class MyActivity extends Activity {
 
                 }
                 Camera.Parameters parameters = camera.getParameters();
-                if (!isChecked) {
-                    parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
-                    camera.setParameters(parameters);
-                    camera.startPreview();
-                } else {
-                    for (int i=0; i<outputMorze.getText().toString().length();i++){
-                        String equal = Character.toString(outputMorze.getText().toString().charAt(i));
-                        if(equal.equals("_")){
-                            parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-                            camera.setParameters(parameters);
-                            camera.startPreview();
-                            try {
-                                TimeUnit.MILLISECONDS.sleep(900);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+
+                        if (!isChecked) {
                             parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
                             camera.setParameters(parameters);
                             camera.startPreview();
-                            try {
-                                TimeUnit.MILLISECONDS.sleep(300);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        }if(equal.equals(".")){
-                            parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-                            camera.setParameters(parameters);
-                            camera.startPreview();
-                            try {
-                                TimeUnit.MILLISECONDS.sleep(300);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
-                            camera.setParameters(parameters);
-                            camera.startPreview();
-                            try {
-                                TimeUnit.MILLISECONDS.sleep(300);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
+                        } else {
+                            Thread flashThread = new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    for (int i=0; i<outputMorze.getText().toString().length();i++){
+                                        String equal = Character.toString(outputMorze.getText().toString().charAt(i));
+                                        if(equal.equals("_")){
+                                            parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                                            camera.setParameters(parameters);
+                                            camera.startPreview();
+                                            try {
+                                                TimeUnit.MILLISECONDS.sleep(900);
+                                            } catch (InterruptedException e) {
+                                                e.printStackTrace();
+                                            }
+                                            parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+                                            camera.setParameters(parameters);
+                                            camera.startPreview();
+                                            try {
+                                                TimeUnit.MILLISECONDS.sleep(300);
+                                            } catch (InterruptedException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }if(equal.equals(".")){
+                                            parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                                            camera.setParameters(parameters);
+                                            camera.startPreview();
+                                            try {
+                                                TimeUnit.MILLISECONDS.sleep(300);
+                                            } catch (InterruptedException e) {
+                                                e.printStackTrace();
+                                            }
+                                            parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+                                            camera.setParameters(parameters);
+                                            camera.startPreview();
+                                            try {
+                                                TimeUnit.MILLISECONDS.sleep(300);
+                                            } catch (InterruptedException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+
+                                    }
+                                }
+                            });
+                                    flashThread.start();
+                            buttonView.setChecked(false);
                             }
                         }
-                        buttonView.setChecked(false);
-                    }
-                }
-
-            }
         });
     }
         @Override
@@ -116,27 +123,32 @@ public class MyActivity extends Activity {
         @Override
         public void onClick(View v) {
             if (v.getId()==R.id.noizButton) {
+                Thread voiceThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for(int i=0; i<outputMorze.getText().toString().length();i++){
+                            String equal = Character.toString(outputMorze.getText().toString().charAt(i));
+                            if(equal.equals("_")){
+                                playSound(mDashSound);
+                                try {
+                                    TimeUnit.MILLISECONDS.sleep(500);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
 
-                    for(int i=0; i<outputMorze.getText().toString().length();i++){
-                        String equal = Character.toString(outputMorze.getText().toString().charAt(i));
-                        if(equal.equals("_")){
-                            playSound(mDashSound);
-                            try {
-                                TimeUnit.MILLISECONDS.sleep(500);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-
-                        }if(equal.equals(".")){
-                            playSound(mDotSound);
-                            try {
-                                TimeUnit.MILLISECONDS.sleep(500);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
+                            }if(equal.equals(".")){
+                                playSound(mDotSound);
+                                try {
+                                    TimeUnit.MILLISECONDS.sleep(500);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                             }
                         }
                     }
+                });
 
+                voiceThread.start();
             }
         }
     };
