@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 
@@ -52,10 +53,9 @@ public class MyActivity extends Activity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (camera == null) {
                     camera = Camera.open();
-
                 }
                 Camera.Parameters parameters = camera.getParameters();
-
+                parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
                         if (!isChecked) {
                             parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
                             camera.setParameters(parameters);
@@ -66,7 +66,7 @@ public class MyActivity extends Activity {
                                 public void run() {
                                     for (int i=0; i<outputMorze.getText().toString().length();i++){
                                         String equal = Character.toString(outputMorze.getText().toString().charAt(i));
-                                        if(equal.equals("_")){
+                                        if(equal.equals("-")){
                                             parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
                                             camera.setParameters(parameters);
                                             camera.startPreview();
@@ -111,11 +111,11 @@ public class MyActivity extends Activity {
                         }
         });
     }
-        @Override
+     /*   @Override
         public void onDestroy() {
             camera.release();
             super.onDestroy();
-        }
+        }*/
 
 
 
@@ -128,7 +128,7 @@ public class MyActivity extends Activity {
                     public void run() {
                         for(int i=0; i<outputMorze.getText().toString().length();i++){
                             String equal = Character.toString(outputMorze.getText().toString().charAt(i));
-                            if(equal.equals("_")){
+                            if(equal.equals("-")){
                                 playSound(mDashSound);
                                 try {
                                     TimeUnit.MILLISECONDS.sleep(500);
@@ -140,6 +140,13 @@ public class MyActivity extends Activity {
                                 playSound(mDotSound);
                                 try {
                                     TimeUnit.MILLISECONDS.sleep(500);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                            }if(equal.equals("/")){
+
+                                try {
+                                    TimeUnit.MILLISECONDS.sleep(1500);
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
                                 }
@@ -160,23 +167,18 @@ public class MyActivity extends Activity {
             }
         }
     };
+
     private void morzing (EditText iT){
      String input = iT.getText().toString();
         String output="";
         MorzeDictionary dict = new MorzeDictionary();
-        ArrayList<String> dictionary = dict.getDictionary();
+        HashMap<Character,String> dictionary = dict.getDictionary();
     for (int i = 0; i<input.length(); i++){
-        for(int j = 0; j<dictionary.size(); j++ ){
-            char c = input.charAt(i);
-            char b = dictionary.get(j).charAt(0);
-            if(c == b){
-               output = output + (dictionary.get(j+1));
-                break;
-            }
-        }
-
+        char c = input.charAt(i);
+        String b = dictionary.get(Character.toLowerCase(c));
+        output = output + b;
     }
-    outputMorze.setText(transformate(output));
+    outputMorze.setText(output);
     }
     private String transformate(String out){
         String dotDash="";

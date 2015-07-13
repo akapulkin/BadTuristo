@@ -17,8 +17,8 @@
             android:ems="10"
             android:id="@+id/editText"
             android:maxLines="3" android:minLines="3"
-            android:linksClickable="false" android:background="#ff343925" android:padding="5dp"
-            android:paddingBottom="10dp" android:hint="Введите текст!" android:layout_alignParentTop="true"
+            android:linksClickable="false" android:background="#ff202529" android:padding="5dp"
+            android:paddingBottom="10dp" android:hint="Введите текст" android:layout_alignParentTop="true"
             android:layout_alignParentStart="true" android:layout_toStartOf="@+id/textView"
             android:layout_alignEnd="@+id/switch_light" android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"/>
@@ -28,7 +28,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/textView"
             android:maxLines="3" android:minLines="3"
-            android:background="#ff343925" android:padding="5dp" android:paddingTop="10dp" android:textSize="25dp"
+            android:background="#ff202529" android:padding="5dp" android:paddingTop="10dp" android:textSize="25dp"
             android:textStyle="bold" android:layout_below="@+id/uperText"
             android:layout_alignParentStart="true" android:textIsSelectable="true"
             android:layout_alignEnd="@+id/switch_light" android:layout_marginLeft="5dp"
@@ -60,6 +60,12 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_below="@+id/textView" android:layout_alignStart="@+id/textView"
-                android:layout_alignEnd="@+id/textView"/>
+                android:layout_alignEnd="@+id/textView" android:id="@+id/space"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:src="@drawable/logo" android:layout_above="@+id/switch_light"
+                android:layout_alignStart="@+id/space"/>
 </RelativeLayout>
 
