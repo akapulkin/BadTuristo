@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by ŒÎÂ„ on 05.07.2015.
+ * Created by –û–ª–µ–≥ on 05.07.2015.
  */
 public class MorzeDictionary {
 
@@ -39,38 +39,38 @@ public class MorzeDictionary {
      this.dictionary.put('y', "-.--");
      this.dictionary.put('z', "--..");
 
-     this.dictionary.put('‡', ".-");
-     this.dictionary.put('·', "-...");
-     this.dictionary.put('ˆ', "-.-.");
-     this.dictionary.put('‰', "-...");
-     this.dictionary.put('Â', ".");
-     this.dictionary.put('Ù', "..-.");
-     this.dictionary.put('„', "--.");
-     this.dictionary.put('ı', "....");
-     this.dictionary.put('Ë', "..");
-     this.dictionary.put('È', ".---");
-     this.dictionary.put('Í', "-.-");
-     this.dictionary.put('Î', ".-...");
-     this.dictionary.put('Ï', "--");
-     this.dictionary.put('Ì', "-.");
-     this.dictionary.put('Ó', "---");
-     this.dictionary.put('Ô', ".--.");
-     this.dictionary.put('˘', "--.-");
-     this.dictionary.put('', ".-.");
-     this.dictionary.put('Ò', "...");
-     this.dictionary.put('Ú', "-");
-     this.dictionary.put('Û', "..-");
-     this.dictionary.put('Ê', "...-");
-     this.dictionary.put('‚', ".--");
-     this.dictionary.put('¸', "-..-");
-     this.dictionary.put('˙', "-..-");
-     this.dictionary.put('˚', "-.--");
-     this.dictionary.put('˜', "---.");
-     this.dictionary.put('¯', "----");
-     this.dictionary.put('˛', "..--");
-     this.dictionary.put('ˇ', ".-.-");
-     this.dictionary.put('˝', "..-..");
-     this.dictionary.put('Á', "--..");
+     this.dictionary.put('–∞', ".-");
+     this.dictionary.put('–±', "-...");
+     this.dictionary.put('—Ü', "-.-.");
+     this.dictionary.put('–¥', "-...");
+     this.dictionary.put('–µ', ".");
+     this.dictionary.put('—Ñ', "..-.");
+     this.dictionary.put('–≥', "--.");
+     this.dictionary.put('—Ö', "....");
+     this.dictionary.put('–∏', "..");
+     this.dictionary.put('–π', ".---");
+     this.dictionary.put('–∫', "-.-");
+     this.dictionary.put('–ª', ".-...");
+     this.dictionary.put('–º', "--");
+     this.dictionary.put('–Ω', "-.");
+     this.dictionary.put('–æ', "---");
+     this.dictionary.put('–ø', ".--.");
+     this.dictionary.put('—â', "--.-");
+     this.dictionary.put('—Ä', ".-.");
+     this.dictionary.put('—Å', "...");
+     this.dictionary.put('—Ç', "-");
+     this.dictionary.put('—É', "..-");
+     this.dictionary.put('–∂', "...-");
+     this.dictionary.put('–≤', ".--");
+     this.dictionary.put('—å', "-..-");
+     this.dictionary.put('—ä', "-..-");
+     this.dictionary.put('—ã', "-.--");
+     this.dictionary.put('—á', "---.");
+     this.dictionary.put('—à', "----");
+     this.dictionary.put('—é', "..--");
+     this.dictionary.put('—è', ".-.-");
+     this.dictionary.put('—ç', "..-..");
+     this.dictionary.put('–∑', "--..");
 
      this.dictionary.put('1', ".----");
      this.dictionary.put('2', "..---");
@@ -88,7 +88,7 @@ public class MorzeDictionary {
      this.dictionary.put(';', "-.-.-");
      this.dictionary.put(':', "---...");
      this.dictionary.put('?', "..--..");
-     this.dictionary.put('π', "-..-.");
+     this.dictionary.put('‚Ññ', "-..-.");
      this.dictionary.put('(', "-.--.-");
      this.dictionary.put(')', "-.--.-");
      this.dictionary.put('"', ".-..-.");

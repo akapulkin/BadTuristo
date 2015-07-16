@@ -13,6 +13,7 @@ import android.widget.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 
@@ -26,6 +27,7 @@ public class MyActivity extends Activity {
     private Context mContext;
     private TextView outputMorze;
     private EditText inputText;
+
     /**
      * Called when the activity is first created.
      */
@@ -169,6 +171,7 @@ public class MyActivity extends Activity {
     };
 
     private void morzing (EditText iT){
+        Locale.setDefault(Locale.ENGLISH);
      String input = iT.getText().toString();
         String output="";
         MorzeDictionary dict = new MorzeDictionary();
